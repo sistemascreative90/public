@@ -64,7 +64,7 @@ Es el nombre lógico que APEX usa internamente y que ve el desarrollador en el �
 
 ```
 RGN_TREE_ARBOL
-BTN_P_GUARDAR
+BTN_PG_GUARDAR
 PRC_AS_PRO_GUARDAR
 DA_CHG_P52_CANTIDAD_CAL_SUBTOTAL
 ```
@@ -185,10 +185,10 @@ Formato `BTN_{SCOPE}_{ACCION}`. El `{SCOPE}` indica el alcance del botón; `{ACC
 
 | Scope | Alcance | Ejemplo |
 | --- | --- | --- |
-| P | Botón de página (acción principal) | BTN_P_GUARDAR |
-| P | Botón de página | BTN_P_CANCELAR |
-| P | Botón de página | BTN_P_NUEVO |
-| P | Botón de página | BTN_P_VOLVER |
+| PG | Botón de página (acción principal) | BTN_PG_GUARDAR |
+| PG | Botón de página | BTN_PG_CANCELAR |
+| PG | Botón de página | BTN_PG_NUEVO |
+| PG | Botón de página | BTN_PG_VOLVER |
 | RGN | Botón dentro de una región concreta | BTN_RGN_AGREGAR |
 | IG | Botón de Interactive Grid | BTN_IG_AGREGAR_FILA |
 | DLG | Botón de diálogo / modal | BTN_DLG_CONFIRMAR |
@@ -197,9 +197,9 @@ Formato `BTN_{SCOPE}_{ACCION}`. El `{SCOPE}` indica el alcance del botón; `{ACC
 
 ### 7.1 Botones generados por el wizard de formulario (CREATE / SAVE)
 
-Cuando el wizard de APEX genera un formulario (Form sobre una tabla), crea dos botones de guardado separados —`CREATE` y `SAVE`— que nunca se muestran al mismo tiempo: `CREATE` aparece cuando el registro es nuevo y `SAVE` cuando ya existe. Como cumplen la misma intención funcional para el usuario, ambos se renombran como `BTN_P_GUARDAR`.
+Cuando el wizard de APEX genera un formulario (Form sobre una tabla), crea dos botones de guardado separados —`CREATE` y `SAVE`— que nunca se muestran al mismo tiempo: `CREATE` aparece cuando el registro es nuevo y `SAVE` cuando ya existe. Como cumplen la misma intención funcional para el usuario, ambos se renombran como `BTN_PG_GUARDAR`.
 
-Si APEX exige nombres únicos por página y genera conflicto al usar el mismo nombre dos veces, se diferencia el botón de alta como `BTN_P_CREAR`, manteniendo `BTN_P_GUARDAR` para el de edición.
+Si APEX exige nombres únicos por página y genera conflicto al usar el mismo nombre dos veces, se diferencia el botón de alta como `BTN_PG_CREAR`, manteniendo `BTN_PG_GUARDAR` para el de edición.
 
 ## 8. Procesos de página
 
@@ -261,13 +261,13 @@ Formato `DA_{EVT}_{ORIGEN}_{VERBO}_{RESULTADO}`. Describe qué evento dispara la
 | Verbo | Significado | Ejemplo de nombre |
 | --- | --- | --- |
 | INI | Inicializar / setear defaults | DA_INIT_P10_INI_PANTALLA |
-| VAL | Validar | DA_CLK_BTN_P_GUARDAR_VAL_FORM |
+| VAL | Validar | DA_CLK_BTN_PG_GUARDAR_VAL_FORM |
 | OBT | Obtener datos de la base | DA_CHG_P10_COD_ART_OBT_PRECIO |
 | CAL | Calcular (JS o PL/SQL) | DA_CHG_P10_CANTIDAD_CAL_TOTAL |
 | REF | Refrescar una región | DA_INIT_RGN_IR_PEDIDOS_REF |
-| PRO | Procesar | DA_CLK_BTN_P_APROBAR_PRO_ESTADO |
+| PRO | Procesar | DA_CLK_BTN_PG_APROBAR_PRO_ESTADO |
 | ACT | Actualizar la interfaz | DA_CHG_P10_TIPO_ACT_CAMPOS |
-| NAV | Navegar a otra página | DA_CLK_BTN_P_VOLVER_NAV_P100 |
+| NAV | Navegar a otra página | DA_CLK_BTN_PG_VOLVER_NAV_P100 |
 
 ## 10. Validaciones y computations
 
@@ -437,7 +437,7 @@ Referencia rápida de todos los prefijos de la norma, para tener a mano durante 
 | Ítem de dato | P{PAG}_{CAMPO} | P10_NOMBRE |
 | Ítem auxiliar oculto | P{PAG}_WK_{NOMBRE} | P10_WK_MODO |
 | Ítem auxiliar visible | P{PAG}_SC_{NOMBRE} | P10_SC_TOTAL |
-| Botón | BTN_{SCOPE}_{ACCION} | BTN_P_GUARDAR |
+| Botón | BTN_{SCOPE}_{ACCION} | BTN_PG_GUARDAR |
 | Proceso | PRC_{POINT}_{VERBO}_{OBJETO} | PRC_AS_PRO_GUARDAR |
 | Proceso AJAX | AJX_{VERBO}_{OBJETO} | AJX_OBT_SALDO |
 | Dynamic Action | DA_{EVT}_{ORIGEN}_{VERBO}_{RES} | DA_CHG_P10_CANT_CAL_TOTAL |
