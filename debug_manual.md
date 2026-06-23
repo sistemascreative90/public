@@ -321,7 +321,22 @@ SELECT *
   FROM LOG_DEBUG_COMPARTIDO
  WHERE evento = 'CALCULAR_DESCUENTO'
  ORDER BY linea;
+
+--ordena
+SELECT sesion_id,
+       evento,
+       linea,
+       etiqueta,
+       valor,
+       TO_CHAR(fecha_log, 'HH24:MI:SS.FF3') AS hora
+  FROM LOG_DEBUG_COMPARTIDO
+ WHERE sesion_id = NVL(v('APP_SESSION'), '999')
+ ORDER BY evento, linea;
+
 ```
+
+
+
 
 ---
 
